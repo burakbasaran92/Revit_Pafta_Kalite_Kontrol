@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "company": "Kurumsal Sirket",
+    "standard_name": "Revit Kalite Standardi",
+    "version": "4.0.0",
+    "last_updated": "2026-04-07"
+  },
+  "score_classes": [
+    { "min": 85, "label": "A - Çok İyi" },
+    { "min": 70, "label": "B - İyi" },
+    { "min": 55, "label": "C - Orta" },
+    { "min": 40, "label": "D - Zayıf" },
+    { "min": 0,  "label": "E - Kritik" }
+  ],
+  "delivery_rules": [
+    { "min_score": 85, "max_red_flags": 0,   "label": "Teslime Uygun" },
+    { "min_score": 70, "max_red_flags": 2,   "label": "Düzeltmelerle Teslime Yakın" },
+    { "min_score": 55, "max_red_flags": 999, "label": "Ciddi Revizyon Gerekli" },
+    { "min_score": 0,  "max_red_flags": 999, "label": "Teslime Uygun Değil" }
+  ],
+  "scoring": {
+    "bim_form_weight": 0.50,
+    "other_qc_weight": 0.50
+  },
+  "history": { "max_reports_per_discipline": 15 },
+  "central_logging": {
+    "enabled": true,
+    "mode": "file",
+    "path": "%APPDATA%\\pyRevit\\RevitKaliteKontrol\\central_logs"
+  },
+  "common": {
+    "category_weights": [
+      { "category": "Uyarı Yönetimi",       "weight": 20 },
+      { "category": "Modelleme Disiplini",   "weight": 15 },
+      { "category": "Temel Kurgu",           "weight": 15 }
+    ],
+    "red_flag_thresholds": {
+      "warnings": 100,
+      "empty_sheets": 3,
+      "unloaded_links": 1,
+      "inplace_families": 5,
+      "cad_imports": 3,
+      "default_named_views": 10
+    }
+  },
+  "disciplines": {
+    "MIMARI": {
+      "label": "Mimari",
+      "category_weights": [
+        { "category": "Model Kapsamı (Mimari)", "weight": 25 },
+        { "category": "Görünüş ve Sunum",       "weight": 25 }
+      ]
+    },
+    "STATIK": {
+      "label": "Statik / Kalıp",
+      "category_weights": [
+        { "category": "Taşıyıcı Sistem Kapsamı",  "weight": 25 },
+        { "category": "Kalıp Projesi Kapsamı",     "weight": 25 }
+      ]
+    },
+    "MEKANIK": {
+      "label": "Mekanik",
+      "category_weights": [
+        { "category": "Mekanik Sistem Kapsamı",      "weight": 25 },
+        { "category": "Dağıtım ve Ekipman Kapsamı",  "weight": 25 }
+      ]
+    },
+    "ELEKTRIK": {
+      "label": "Elektrik",
+      "category_weights": [
+        { "category": "Elektrik Sistem Kapsamı",  "weight": 25 },
+        { "category": "Hat ve Cihaz Kapsamı",     "weight": 25 }
+      ]
+    }
+  }
+}

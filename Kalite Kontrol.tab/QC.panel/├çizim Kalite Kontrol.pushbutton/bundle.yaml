@@ -1,0 +1,4 @@
+title: Çizim Kalite\nKontrol
+tooltip: Revit dosyasının temel çizim/model kalite skorunu ölçer, kırmızı bayrakları listeler ve CSV raporu üretir.
+author: OpenAI
+context: doc-project
